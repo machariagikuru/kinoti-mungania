@@ -1,5 +1,4 @@
-
-import { GraduationCap, Award, Heart, MapPin, Briefcase, Users } from "lucide-react";
+import { GraduationCap, Award, Heart, MapPin, Briefcase, Users, Shield } from "lucide-react";
 
 export const About = () => {
   return (
