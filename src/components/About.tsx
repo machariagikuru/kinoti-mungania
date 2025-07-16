@@ -1,5 +1,5 @@
 
-import { GraduationCap, Award, Heart } from "lucide-react";
+import { GraduationCap, Award, Heart, MapPin, Briefcase, Users } from "lucide-react";
 
 export const About = () => {
   return (
@@ -19,9 +19,9 @@ export const About = () => {
             <div className="flex items-start space-x-4">
               <GraduationCap className="h-8 w-8 text-primary mt-1 flex-shrink-0" />
               <div>
-                <h3 className="text-xl font-semibold text-card-foreground mb-2">Educational Excellence</h3>
+                <h3 className="text-xl font-semibold text-card-foreground mb-2">Educational Leadership</h3>
                 <p className="text-muted-foreground">
-                  With years of experience in the education sector, I understand the challenges and opportunities that face our teaching community in Meru County.
+                  Bachelor of Education from Kenyatta University, with over 15 years of experience in the education sector serving in various capacities across Meru County schools.
                 </p>
               </div>
             </div>
@@ -31,17 +31,27 @@ export const About = () => {
               <div>
                 <h3 className="text-xl font-semibold text-card-foreground mb-2">Financial Expertise</h3>
                 <p className="text-muted-foreground">
-                  As a financial controller, I bring proven experience in prudent fund management, asset acquisition, and transparent financial governance.
+                  Certified Financial Controller with CPA(K) qualification. Currently serving as Financial Controller at Meru County Government, managing multi-million budgets with proven track record of prudent financial management.
                 </p>
               </div>
             </div>
 
             <div className="flex items-start space-x-4">
-              <Heart className="h-8 w-8 text-primary mt-1 flex-shrink-0" />
+              <Users className="h-8 w-8 text-primary mt-1 flex-shrink-0" />
               <div>
-                <h3 className="text-xl font-semibold text-card-foreground mb-2">Community Commitment</h3>
+                <h3 className="text-xl font-semibold text-card-foreground mb-2">Community Service</h3>
                 <p className="text-muted-foreground">
-                  My vision extends beyond financial management to creating a comprehensive welfare system that truly supports our teachers and their families.
+                  Active KUPPET member since 2008, served as Branch Secretary (2018-2022), and chairman of various teacher welfare committees. Passionate advocate for teacher rights and welfare.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4">
+              <MapPin className="h-8 w-8 text-primary mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="text-xl font-semibold text-card-foreground mb-2">Local Knowledge</h3>
+                <p className="text-muted-foreground">
+                  Born and raised in Meru County, with deep understanding of local challenges facing teachers. Married with three children, all products of public education system.
                 </p>
               </div>
             </div>
@@ -52,10 +62,27 @@ export const About = () => {
             <p className="text-card-foreground leading-relaxed mb-6">
               "To transform KUPPET Meru Branch into a model of excellence where every teacher feels supported, valued, and empowered. Through transparent financial management and comprehensive welfare programs, we will build a stronger future for our educational community."
             </p>
+            
+            <div className="space-y-4 mb-6">
+              <div className="flex items-center space-x-3">
+                <Heart className="h-5 w-5 text-primary" />
+                <span className="text-card-foreground">Passionate about teacher welfare</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Briefcase className="h-5 w-5 text-primary" />
+                <span className="text-card-foreground">Proven financial management skills</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Shield className="h-5 w-5 text-primary" />
+                <span className="text-card-foreground">Committed to transparency</span>
+              </div>
+            </div>
+            
             <div className="border-l-4 border-primary pl-4">
               <p className="text-muted-foreground italic">
-                Together, we will ensure that no teacher faces challenges alone, and every educator in Meru County thrives.
+                "Together, we will ensure that no teacher faces challenges alone, and every educator in Meru County thrives with dignity and support."
               </p>
+              <p className="text-sm text-muted-foreground mt-2">- Kinoti Mungania</p>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Vote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Navigation = () => {
@@ -19,8 +19,13 @@ export const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <h2 className="text-xl font-bold text-card-foreground">Kinoti Mungania</h2>
-            <p className="text-xs text-muted-foreground">KUPPET Treasurer 2026</p>
+            <div className="flex items-center space-x-3">
+              <Vote className="h-8 w-8 text-primary" />
+              <div>
+                <h2 className="text-xl font-bold text-card-foreground">Kinoti Mungania</h2>
+                <p className="text-xs text-muted-foreground">KUPPET Treasurer 2026</p>
+              </div>
+            </div>
           </div>
           
           {/* Desktop Navigation */}
@@ -50,6 +55,9 @@ export const Navigation = () => {
               >
                 Contact
               </button>
+              <Button size="sm" className="bg-primary hover:bg-primary/90 ml-4">
+                Support Campaign
+              </Button>
             </div>
           </div>
 
@@ -93,6 +101,11 @@ export const Navigation = () => {
               >
                 Contact
               </button>
+              <div className="px-3 py-2">
+                <Button size="sm" className="bg-primary hover:bg-primary/90 w-full">
+                  Support Campaign
+                </Button>
+              </div>
             </div>
           </div>
         )}
