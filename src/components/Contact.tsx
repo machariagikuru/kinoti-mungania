@@ -18,7 +18,7 @@ export const Contact = () => {
       navigator.share({
         title: "Support Kinoti Mungania",
         text: "Read and share the manifesto for a better KUPPET Meru.",
-        url: "https://yourwebsite.com",
+        url: "https://www.kinotimungania.com",
       });
     } else {
       alert("Sharing is not supported in this browser.");
