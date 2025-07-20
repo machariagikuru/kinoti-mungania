@@ -5,6 +5,7 @@ import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Navigation } from "@/components/Navigation";
 import { SplitSliderSection } from "@/components/SplitSliderSection";
+import { FloatingStarsCounter } from "@/components/FloatingStarsCounter";
 
 
 const Index = () => {
@@ -13,10 +14,10 @@ const Index = () => {
       <Navigation />
       <SplitSliderSection />
       <Hero />
-  
       <About />
       <Manifesto />
       <Contact />
+      <FloatingStarsCounter />
     </div>
   );
 };

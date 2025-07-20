@@ -27,7 +27,7 @@ export const Navigation = () => {
               <Vote className="h-8 w-8 text-primary" />
               <div>
                 <h2 className="text-xl font-bold text-card-foreground">Kinoti Mungania</h2>
-                <p className="text-xs text-muted-foreground">KUPPET Treasurer 2026</p>
+                <p className="text-xs text-muted-foreground">Incoming KUPPET Treasurer,Meru County 2026</p>
               </div>
             </div>
           </div>

@@ -1,8 +1,8 @@
-
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, TrendingUp, Shield } from "lucide-react";
+import { ArrowRight, Users, TrendingUp, Shield, Handshake, Lightbulb } from "lucide-react";
 
 export const Hero = () => {
+  // Function to smoothly scroll to the manifesto section
   const scrollToManifesto = () => {
     const element = document.getElementById('manifesto');
     if (element) {
@@ -11,49 +11,65 @@ export const Hero = () => {
   };
 
   return (
-    <section id="home" className="pt-20 pb-16 lg:pt-32 lg:pb-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="home" className="pt-24 pb-20 lg:pt-40 lg:pb-32 bg-background relative overflow-hidden">
+      {/* Optional: Add a subtle background pattern or gradient for aesthetic appeal */}
+      {/* <div className="absolute inset-0 z-0 opacity-5" style={{ backgroundImage: 'url("/path/to/subtle-pattern.svg")', backgroundSize: 'cover' }}></div> */}
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            <span className="text-primary">Kinoti Mungania</span>
-            <br />
-            <span className="text-2xl md:text-4xl text-muted-foreground">for KUPPET Treasurer</span>
+          {/* Main Headline: Candidate Name and Role */}
+          <h1 className="text-5xl md:text-7xl font-extrabold text-foreground leading-tight mb-4 animate-fade-in-down">
+            <span className="text-primary block">KINOTI MUNGANIA</span>
+            <span className="block text-2xl md:text-4xl font-semibold text-muted-foreground mt-2">
+              For KUPPET Treasurer, Meru County
+            </span>
           </h1>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Building a stronger future for teachers in Meru County through transparent financial management and comprehensive welfare programs
+
+          {/* Core Message / Tagline */}
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in-up">
+            I believe leadership is about service, not status. <br className="hidden md:block" />
+            I'm here to listen, act, and deliver real solutions for teachers. <br />
+            My commitment is to serve with integrity, stay accessible, and ensure every teacher in Meru feels represented and supported.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button 
+          {/* Call to Action for the Manifesto */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-fade-in-up-delay">
+            <Button
               onClick={scrollToManifesto}
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg"
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-3 text-lg font-semibold rounded-full shadow-lg
+                         transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
             >
-              View My Manifesto
-              <ArrowRight className="ml-2 h-5 w-5" />
+              View My Manifesto <ArrowRight className="ml-3 h-5 w-5" />
             </Button>
-            <p className="text-muted-foreground font-medium">KUPPET Elections 2026</p>
+            {/* A subtle tag for branding/team spirit */}
+            <p className="text-xl text-primary font-bold tracking-wider opacity-90">#TeamKinoti</p>
           </div>
 
-          {/* Key Statistics */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center p-6 bg-card/70 backdrop-blur-sm rounded-xl border border-border">
-              <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-card-foreground mb-2">15+ Years</h3>
-              <p className="text-muted-foreground">Experience in education and financial management</p>
+          {/* Key Statistics / Value Proposition */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto pt-8">
+            {/* Stat Card 1: Experience */}
+            <div className="text-center p-8 bg-card/80 backdrop-blur-sm rounded-2xl border border-border shadow-lg
+                        transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+              <Users className="h-16 w-16 text-foreground mx-auto mb-4 drop-shadow-xl" /> {/* Changed color to text-foreground */}
+              <h3 className="text-2xl font-bold text-card-foreground mb-2">15+ Years</h3>
+              <p className="text-muted-foreground text-lg">Experience in education and financial management</p>
             </div>
-            
-            <div className="text-center p-6 bg-card/70 backdrop-blur-sm rounded-xl border border-border">
-              <TrendingUp className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-card-foreground mb-2">8-Point Plan</h3>
-              <p className="text-muted-foreground">Comprehensive manifesto for teacher welfare transformation</p>
+
+            {/* Stat Card 2: Plan */}
+            <div className="text-center p-8 bg-card/80 backdrop-blur-sm rounded-2xl border border-border shadow-lg
+                        transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+              <Lightbulb className="h-16 w-16 text-foreground mx-auto mb-4 drop-shadow-xl" /> {/* Changed color to text-foreground */}
+              <h3 className="text-2xl font-bold text-card-foreground mb-2">8-Point Plan</h3>
+              <p className="text-muted-foreground text-lg">Comprehensive manifesto for teacher welfare transformation</p>
             </div>
-            
-            <div className="text-center p-6 bg-card/70 backdrop-blur-sm rounded-xl border border-border">
-              <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-card-foreground mb-2">Proven Track Record</h3>
-              <p className="text-muted-foreground">Financial controller with demonstrated leadership</p>
+
+            {/* Stat Card 3: Track Record */}
+            <div className="text-center p-8 bg-card/80 backdrop-blur-sm rounded-2xl border border-border shadow-lg
+                        transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+              <Handshake className="h-16 w-16 text-foreground mx-auto mb-4 drop-shadow-xl" /> {/* Changed color to text-foreground */}
+              <h3 className="text-2xl font-bold text-card-foreground mb-2">Proven Track Record</h3>
+              <p className="text-muted-foreground text-lg">Financial controller with demonstrated leadership</p>
             </div>
           </div>
         </div>

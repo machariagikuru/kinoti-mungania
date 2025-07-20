@@ -1,8 +1,30 @@
-
-import { Mail, Phone, MapPin, Calendar, Facebook, Twitter, Users, MessageSquare } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Calendar,
+  Facebook,
+  Twitter,
+  Users,
+  MessageSquare,
+  Share2,
+  Download,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Contact = () => {
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: "Support Kinoti Mungania",
+        text: "Read and share the manifesto for a better KUPPET Meru.",
+        url: "https://yourwebsite.com",
+      });
+    } else {
+      alert("Sharing is not supported in this browser.");
+    }
+  };
+
   return (
     <section id="contact" className="py-16 bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,6 +38,7 @@ export const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Left Column: Contact + Social */}
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold text-card-foreground mb-6">Get in Touch</h3>
@@ -24,14 +47,14 @@ export const Contact = () => {
                   <Mail className="h-6 w-6 text-primary" />
                   <div>
                     <p className="font-medium text-card-foreground">Email</p>
-                    <span className="text-muted-foreground">kinoti.mungania@gmail.com</span>
+                    <span className="text-muted-foreground">kinotimungania79@gmail.com</span>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
                   <Phone className="h-6 w-6 text-primary" />
                   <div>
-                    <p className="font-medium text-card-foreground">Phone/WhatsApp</p>
-                    <span className="text-muted-foreground">+254 722 345 678</span>
+                    <p className="font-medium text-card-foreground">Phone / WhatsApp</p>
+                    <span className="text-muted-foreground">+254 723 265 140</span>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -45,7 +68,7 @@ export const Contact = () => {
                   <Calendar className="h-6 w-6 text-primary" />
                   <div>
                     <p className="font-medium text-card-foreground">Election Date</p>
-                    <span className="text-muted-foreground">KUPPET Elections 2026</span>
+                    <span className="text-muted-foreground">February, 2026</span>
                   </div>
                 </div>
               </div>
@@ -57,7 +80,7 @@ export const Contact = () => {
                 Campaign Updates
               </h4>
               <p className="text-muted-foreground mb-4">
-                Stay informed about campaign events, manifesto updates, town halls, and election information. Be part of the movement for change.
+                Stay informed about campaign events, manifesto updates, town halls, and election information.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
@@ -69,19 +92,23 @@ export const Contact = () => {
               </div>
             </div>
 
-            <div className="flex space-x-4">
-              <a href="#" className="p-3 bg-primary/10 rounded-lg hover:bg-primary/20 transition-colors">
+            {/* Social Icons */}
+            <div className="flex space-x-4 pt-4">
+              <a href="#" aria-label="Facebook" className="p-3 bg-primary/10 rounded-lg hover:bg-primary/20 transition">
                 <Facebook className="h-6 w-6 text-primary" />
               </a>
-              <a href="#" className="p-3 bg-primary/10 rounded-lg hover:bg-primary/20 transition-colors">
+              <a href="#" aria-label="Twitter" className="p-3 bg-primary/10 rounded-lg hover:bg-primary/20 transition">
                 <Twitter className="h-6 w-6 text-primary" />
               </a>
-              <a href="#" className="p-3 bg-primary/10 rounded-lg hover:bg-primary/20 transition-colors">
-                <MessageSquare className="h-6 w-6 text-primary" />
+              <a href="https://api.whatsapp.com/send?text=Support%20Kinoti%20Mungania%20for%20KUPPET%20Treasurer%20in%202026%20-%20Read%20his%20Manifesto:%20https://yourwebsite.com" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <div className="p-3 bg-primary/10 rounded-lg hover:bg-primary/20 transition">
+                  <MessageSquare className="h-6 w-6 text-primary" />
+                </div>
               </a>
             </div>
           </div>
 
+          {/* Right Column: Campaign Support */}
           <div className="bg-gradient-to-br from-secondary to-accent/40 p-8 rounded-2xl">
             <h3 className="text-2xl font-bold text-card-foreground mb-6">Support the Campaign</h3>
             <div className="space-y-6">
@@ -91,54 +118,63 @@ export const Contact = () => {
                   Volunteer Opportunities
                 </h4>
                 <p className="text-muted-foreground">
-                  Join our team of dedicated volunteers spreading the message across all 9 sub-counties in Meru. Help organize rallies, distribute materials, and mobilize teachers.
+                  Help spread the message across Meru’s 9 sub-counties. Organize rallies, mobilize teachers, and distribute materials.
                 </p>
               </div>
-              
+
               <div>
                 <h4 className="text-lg font-semibold text-card-foreground mb-2">School Visits & Town Halls</h4>
                 <p className="text-muted-foreground">
-                  Attend scheduled visits to schools and community meetings. Meet fellow teachers, discuss challenges, and learn how we can work together for positive change.
+                  Attend community meetings and share your ideas to shape a better KUPPET for all.
                 </p>
               </div>
-              
+
               <div>
                 <h4 className="text-lg font-semibold text-card-foreground mb-2">Spread the Word</h4>
                 <p className="text-muted-foreground">
-                  Share our manifesto with fellow teachers, headteachers, and education stakeholders. Use social media, WhatsApp groups, and school meetings to build awareness.
+                  Share our manifesto online, in WhatsApp groups, and with fellow teachers.
                 </p>
               </div>
 
               <div className="bg-card/50 p-4 rounded-lg">
                 <h5 className="font-semibold text-card-foreground mb-2">Upcoming Events</h5>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Teacher Forums - Every Saturday</li>
-                  <li>• Sub-county Rallies - Monthly</li>
-                  <li>• School Visits - Ongoing</li>
-                  <li>• Manifesto Launch - February 2026</li>
+                  <li>• Teacher Forums – Ongoing </li>
+                  <li>• Sub-county Rallies – Monthly</li>
+                  <li>• School Visits – Ongoing</li>
+                  <li>• Voting Day – February 2026</li>
                 </ul>
               </div>
             </div>
-            
+
             <div className="mt-6 p-4 bg-card rounded-lg border-l-4 border-primary">
               <p className="text-card-foreground font-medium">
                 "Every teacher's voice matters. Every vote counts. Together, we will build a KUPPET that truly serves its members."
               </p>
-              <p className="text-muted-foreground text-sm mt-1">- Kinoti Mungania, Candidate for Treasurer</p>
+              <p className="text-muted-foreground text-sm mt-1">– Kinoti Mungania, Candidate for Treasurer</p>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 text-center">
+        {/* Download & Share Actions */}
+        <div className="mt-12 text-center px-4">
           <div className="bg-primary text-primary-foreground p-6 rounded-xl max-w-3xl mx-auto">
             <h4 className="text-xl font-bold mb-2">Ready to Make a Difference?</h4>
             <p className="mb-4">Join the movement for transparent, effective teacher welfare management in Meru County.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg">
-                Download Manifesto
-              </Button>
-              <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                Join Campaign Team
+              <a href="/Kinoti-Mungania-Manifesto.pdf" download className="inline-flex">
+                <Button size="lg" className="flex items-center gap-2 bg-accent text-accent-foreground hover:bg-accent/90">
+                  <Download className="w-5 h-5" />
+                  Download Manifesto
+                </Button>
+              </a>
+              <Button
+                size="lg"
+                className="flex items-center gap-2 border border-white text-white hover:bg-white hover:text-primary transition"
+                onClick={handleShare}
+              >
+                <Share2 className="w-5 h-5" />
+                Share Website
               </Button>
             </div>
           </div>
