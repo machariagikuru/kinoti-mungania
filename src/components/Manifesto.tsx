@@ -39,7 +39,7 @@ const manifestoPoints: ManifestoPoint[] = [
         "Emergency relief for distressed members"
       ],
     },
-    impact: "6,500+ Meru County teachers and their dependants will be supported",
+    impact: "7,000+ Meru County teachers will benefit",
     color: "bg-primary/20 text-primary",
   },
   {
@@ -52,7 +52,7 @@ const manifestoPoints: ManifestoPoint[] = [
         "Accountable management of welfare contributions",
       ],
     },
-    impact: "9 elected reps, 1 per sub-county",
+    impact: "16 elected reps, 1 per sub-county",
     color: "bg-accent/20 text-accent-foreground",
   },
   {
@@ -79,6 +79,7 @@ const manifestoPoints: ManifestoPoint[] = [
       bullets: [
         "Regular financial audits",
         "Transparent reporting",
+        "Provide monthly financial reports to members",
         "Acquire land for KUPPET Meru Branch offices",
         "Build rental properties for long-term financial sustainability",
         "Buy KUPPET Meru branch bus for mobility and members functions",
@@ -129,7 +130,7 @@ const manifestoPoints: ManifestoPoint[] = [
         "Access to expert speakers and resources",
       ],
     },
-    impact: "Empowering 6,500+ teachers with knowledge",
+    impact: "Empowering 7000+ teachers with knowledge",
     color: "bg-primary/25 text-primary",
   },
   {
@@ -216,15 +217,15 @@ export const Manifesto = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div>
-                <div className="text-3xl font-bold mb-2">6,500+</div>
+                <div className="text-3xl font-bold mb-2">7,000+</div>
                 <div className="text-primary-foreground/80">Teachers to benefit across Meru County</div>
               </div>
               <div>
-                <div className="text-3xl font-bold mb-2">9</div>
-                <div className="text-primary-foreground/80">Sub-counties covered</div>
+                <div className="text-3xl font-bold mb-2">16</div>
+                <div className="text-primary-foreground/80">Meru Sub-counties covered</div>
               </div>
               <div>
-                <div className="text-3xl font-bold mb-2">15+</div>
+                <div className="text-3xl font-bold mb-2">20+</div>
                 <div className="text-primary-foreground/80">Years experience</div>
               </div>
             </div>
@@ -236,7 +237,7 @@ export const Manifesto = () => {
               <div className="space-y-3">
                 <h4 className="font-semibold text-card-foreground">Transparency Guarantee:</h4>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li>• Quarterly financial reports published online</li>
+                  <li>• Monthly financial reports published online</li>
                   <li>• Open-door policy for member inquiries</li>
                   <li>• Annual general meetings with full disclosure</li>
                 </ul>

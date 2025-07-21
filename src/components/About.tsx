@@ -20,7 +20,7 @@ export const About = () => {
               <div>
                 <h3 className="text-xl font-semibold text-card-foreground mb-2">Educational Leadership</h3>
                 <p className="text-muted-foreground">
-                  Bachelor of Education from Kenyatta University, with over 15 years of experience in the education sector serving in various capacities across Meru County schools.
+                  An alumnus of Egerton University, with more than 20 years of dedicated experience in the education sector, having contributed in various leadership roles across schools in Meru County and beyond. Currently serving as the Deputy Principal at Miathene Boys High School.
                 </p>
               </div>
             </div>
@@ -30,7 +30,7 @@ export const About = () => {
               <div>
                 <h3 className="text-xl font-semibold text-card-foreground mb-2">Financial Expertise</h3>
                 <p className="text-muted-foreground">
-                  Certified Financial Controller with CPA(K) qualification. Currently serving as Financial Controller at Meru County Government, managing multi-million budgets with proven track record of prudent financial management.
+                  Extensive experience in managing and driving the success of private businesses and projects, with a focus on financial strategy, growth, and operational efficiency.
                 </p>
               </div>
             </div>
@@ -40,7 +40,7 @@ export const About = () => {
               <div>
                 <h3 className="text-xl font-semibold text-card-foreground mb-2">Community Service</h3>
                 <p className="text-muted-foreground">
-                  Active KUPPET member since 2008, served as Branch Secretary (2018-2022), and chairman of various teacher welfare committees. Passionate advocate for teacher rights and welfare.
+                  A committed KUPPET member since 2007, I’ve been a strong advocate for teachers' rights. I’ve served in key leadership roles in Meru County, including Science Congress Secretary for the larger Tigania District and Sports Secretary for Tigania East. Currently, I’m the Treasurer for the Meru Spotlight Group and several other teachers' groups.
                 </p>
               </div>
             </div>
@@ -50,7 +50,7 @@ export const About = () => {
               <div>
                 <h3 className="text-xl font-semibold text-card-foreground mb-2">Local Knowledge</h3>
                 <p className="text-muted-foreground">
-                  Born and raised in Meru County, with deep understanding of local challenges facing teachers. Married with three children, all products of public education system.
+                  Born and raised in Meru County, and having worked here for many years, I have a deep, firsthand understanding of the unique challenges teachers face in the region.
                 </p>
               </div>
             </div>
@@ -61,7 +61,7 @@ export const About = () => {
             <p className="text-card-foreground leading-relaxed mb-6">
               "To transform KUPPET Meru Branch into a model of excellence where every teacher feels supported, valued, and empowered. Through transparent financial management and comprehensive welfare programs, we will build a stronger future for our educational community."
             </p>
-            
+
             <div className="space-y-4 mb-6">
               <div className="flex items-center space-x-3">
                 <Heart className="h-5 w-5 text-primary" />
@@ -76,7 +76,7 @@ export const About = () => {
                 <span className="text-card-foreground">Committed to transparency</span>
               </div>
             </div>
-            
+
             <div className="border-l-4 border-primary pl-4">
               <p className="text-muted-foreground italic">
                 "Together, we will ensure that no teacher faces challenges alone, and every educator in Meru County thrives with dignity and support."
