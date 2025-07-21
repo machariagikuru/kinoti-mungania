@@ -52,7 +52,7 @@ export const Hero = () => {
             <div className="text-center p-8 bg-card/80 backdrop-blur-sm rounded-2xl border border-border shadow-lg
                         transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
               <Users className="h-16 w-16 text-foreground mx-auto mb-4 drop-shadow-xl" /> {/* Changed color to text-foreground */}
-              <h3 className="text-2xl font-bold text-card-foreground mb-2">15+ Years</h3>
+              <h3 className="text-2xl font-bold text-card-foreground mb-2">20+ Years</h3>
               <p className="text-muted-foreground text-lg">Experience in education and financial management</p>
             </div>
 
