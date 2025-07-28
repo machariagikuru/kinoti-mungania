@@ -44,7 +44,11 @@ export const Navigation = () => {
                   {id.charAt(0).toUpperCase() + id.slice(1)}
                 </button>
               ))}
-              <Button size="sm" className="bg-primary hover:bg-primary/90 ml-4">
+              <Button
+                size="sm"
+                className="bg-primary hover:bg-primary/90 ml-4"
+                onClick={() => scrollToSection("support")}
+              >
                 Support Campaign
               </Button>
             </div>
@@ -77,7 +81,11 @@ export const Navigation = () => {
                 </button>
               ))}
               <div className="px-3 py-2">
-                <Button size="sm" className="bg-primary hover:bg-primary/90 w-full">
+                <Button
+                  size="sm"
+                  className="bg-primary hover:bg-primary/90 w-full"
+                  onClick={() => scrollToSection("support")}
+                >
                   Support Campaign
                 </Button>
               </div>

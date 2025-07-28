@@ -109,7 +109,7 @@ export const Contact = () => {
           </div>
 
           {/* Right Column: Campaign Support */}
-          <div className="bg-gradient-to-br from-secondary to-accent/40 p-8 rounded-2xl">
+          <div id="support" className="bg-gradient-to-br from-secondary to-accent/40 p-8 rounded-2xl">
             <h3 className="text-2xl font-bold text-card-foreground mb-6">Support the Campaign</h3>
             <div className="space-y-6">
               <div>
