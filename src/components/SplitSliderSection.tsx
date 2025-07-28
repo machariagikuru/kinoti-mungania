@@ -51,7 +51,7 @@ const Countdown = () => {
 
     return (
         <div className="text-lg md:text-xl font-semibold mb-4">
-            Elections in:
+            Huyu tunaapisha in:
             <span className="ml-2 text-red-600 font-extrabold">
                 {`${days} day${days !== 1 ? "s" : ""}, ${hours}h ${minutes}m ${seconds}s`}
             </span>
@@ -64,7 +64,7 @@ const FloatingDotsCounter = () => {
   const [count, setCount] = useState(0);
   const [dotCount, setDotCount] = useState(1);
   const fastTarget = 4671;
-  const finalCount = 5372;
+  const finalCount = 6372;
 
   useEffect(() => {
     let current = 0;
@@ -114,9 +114,9 @@ const FloatingDotsCounter = () => {
     <div className="mt-6 inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md">
       <span className="text-red-600 font-extrabold text-lg">{loadingDots}</span>
       <span className="text-red-600 font-extrabold text-sm sm:text-base">
-        {count.toLocaleString()} Techers supporting Kinoti Mungania
+        {count.toLocaleString()} Meru Techers wamesema Kinoti Mungania Tosha
         <br />
-        as the KUPPET Meru County Treasurer
+        and the number is still growing{loadingDots}
       </span>
     </div>
   );

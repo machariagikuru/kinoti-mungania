@@ -4,7 +4,7 @@ import { Star } from "lucide-react";
 export const FloatingStarsCounter = () => {
     const [count, setCount] = useState(0);
     const fastTarget = 4671;
-    const finalCount = 5372;
+    const finalCount = 6372;
 
     useEffect(() => {
         let current = 0;
@@ -41,7 +41,8 @@ export const FloatingStarsCounter = () => {
         <div className="fixed bottom-4 right-4 z-50 bg-primary text-primary-foreground px-4 py-2 rounded-full shadow-lg flex items-center space-x-2 animate-bounce hover:animate-none">
             <Star className="w-5 h-5 text-yellow-400" />
             <span className="font-semibold text-sm sm:text-base">
-                {count.toLocaleString()} Meru teachers supporting Kinoti Mungania
+                {count.toLocaleString()} Teachers have confirmed Kinoti Mungania <br />as the incoming KUPPET Meru County Treasurer
+
             </span>
         </div>
     );
