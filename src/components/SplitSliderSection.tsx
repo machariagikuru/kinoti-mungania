@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+
 
 const slides = [
     {
@@ -21,27 +22,107 @@ const slides = [
     },
 ];
 
+// Countdown component
+const Countdown = () => {
+    const targetDate = new Date("2026-01-25T00:00:00").getTime();
+    const [timeLeft, setTimeLeft] = useState(targetDate - Date.now());
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            const now = Date.now();
+            const difference = targetDate - now;
+            setTimeLeft(difference > 0 ? difference : 0);
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, [targetDate]);
+
+    if (timeLeft <= 0) {
+        return (
+            <div className="text-lg md:text-xl font-semibold mb-4 text-primary">
+                🎉 Election day is here!
+            </div>
+        );
+    }
+
+    const seconds = Math.floor((timeLeft / 1000) % 60);
+    const minutes = Math.floor((timeLeft / 1000 / 60) % 60);
+    const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+
+    return (
+        <div className="text-lg md:text-xl font-semibold mb-4">
+            Elections in:
+            <span className="ml-2 text-red-600 font-extrabold">
+                {`${days} day${days !== 1 ? "s" : ""}, ${hours}h ${minutes}m ${seconds}s`}
+            </span>
+        </div>
+    );
+};
+
+
+// Supporter counter component
+const FloatingStarsCounter = () => {
+    const [count, setCount] = useState(0);
+    const fastTarget = 4671;
+    const finalCount = 5372;
+
+    useEffect(() => {
+        let current = 0;
+        let fastInterval: NodeJS.Timeout;
+        let slowInterval: NodeJS.Timeout;
+
+        fastInterval = setInterval(() => {
+            current += 100;
+            if (current >= fastTarget) {
+                current = fastTarget;
+                clearInterval(fastInterval);
+
+                slowInterval = setInterval(() => {
+                    current += 1;
+                    setCount(current);
+                    if (current >= finalCount) {
+                        clearInterval(slowInterval);
+                    }
+                }, 2000);
+            }
+            setCount(current);
+        }, 40);
+
+        return () => {
+            clearInterval(fastInterval);
+            clearInterval(slowInterval);
+        };
+    }, []);
+
+    return (
+        <div className="mt-6 inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full shadow-md">
+            <Star className="w-5 h-5 text-yellow-400" />
+            <span className="font-semibold text-sm sm:text-base">
+                {count.toLocaleString()} Meru teachers supporting Kinoti Mungania
+            </span>
+        </div>
+    );
+};
+
 export const SplitSliderSection = () => {
     const [current, setCurrent] = useState(0);
     const length = slides.length;
 
-    // Handles moving to the next slide
     const nextSlide = () => setCurrent((prev) => (prev + 1) % length);
-    // Handles moving to the previous slide
     const prevSlide = () => setCurrent((prev) => (prev - 1 + length) % length);
 
-    // Automatic slide transition
     useEffect(() => {
         const timer = setInterval(() => {
             nextSlide();
-        }, 6000); // Change slide every 6 seconds
-        return () => clearInterval(timer); // Clean up timer on unmount
+        }, 6000);
+        return () => clearInterval(timer);
     }, [current, length]);
 
     return (
         <section className="py-20 lg:py-32 bg-background text-foreground">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                {/* Text Content Side (unchanged as per request) */}
+                {/* Text Content Side (modified as requested) */}
                 <div className="text-center md:text-left">
                     <h2 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 leading-tight">
                         This is What We Deserve:
@@ -50,13 +131,20 @@ export const SplitSliderSection = () => {
                         A stronger, empowered teaching fraternity in Meru County.
                         Our voice must be louder, our rights clearer, and our support systems stronger.
                     </p>
-                    <p className="text-xl md:text-2xl font-bold text-primary mb-8">
+
+                    {/* Countdown */}
+                    <Countdown />
+
+                    {/* Supporter Counter */}
+                    <FloatingStarsCounter />
+
+                    <p className="text-xl md:text-2xl font-bold text-primary mb-8 mt-4">
                         #WelcomeToTeamKinoti
                     </p>
 
                     <button
                         onClick={() => {
-                            const el = document.getElementById("about"); // Assuming 'about' is your target section ID
+                            const el = document.getElementById("about");
                             if (el) el.scrollIntoView({ behavior: "smooth" });
                         }}
                         className="px-8 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition duration-300
@@ -69,7 +157,7 @@ export const SplitSliderSection = () => {
 
                 {/* Image Slider Side */}
                 <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden rounded-xl shadow-lg border border-border">
-                    {/* KUPPET logos - positioned outside the slide map for static visibility */}
+                    {/* KUPPET logos */}
                     <img
                         src="/images/kuppet-logo.jpg"
                         alt="KUPPET Logo Left"
@@ -91,12 +179,11 @@ export const SplitSliderSection = () => {
                             <img
                                 src={slide.image}
                                 alt={slide.alt}
-                                className="w-full h-full object-contain" // Reverted to object-contain
+                                className="w-full h-full object-contain"
                             />
                         </div>
                     ))}
 
-                    {/* Slider Navigation Arrows */}
                     <button
                         onClick={prevSlide}
                         className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-primary/80 text-primary-foreground p-3 rounded-full z-30
@@ -114,7 +201,6 @@ export const SplitSliderSection = () => {
                         <ChevronRight className="w-6 h-6" />
                     </button>
 
-                    {/* Slider Dot Indicators */}
                     <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
                         {slides.map((_, index) => (
                             <button
