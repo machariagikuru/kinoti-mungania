@@ -39,9 +39,9 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <SpeedInsights /> {/* ✅ Moved inside BrowserRouter */}
         </BrowserRouter>
         <Analytics /> {/* ✅ Vercel Analytics */}
-        <SpeedInsights /> {/* ✅ Vercel Speed Insights */}
       </TooltipProvider>
     </QueryClientProvider>
   );
