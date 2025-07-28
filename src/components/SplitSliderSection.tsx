@@ -51,7 +51,9 @@ const Countdown = () => {
 
     return (
         <div className="text-lg md:text-xl font-semibold mb-4">
-            Huyu tunaapisha in:
+            <span>
+                🗳️ Voting in Kinoti Mungania in
+            </span>:
             <span className="ml-2 text-red-600 font-extrabold">
                 {`${days} day${days !== 1 ? "s" : ""}, ${hours}h ${minutes}m ${seconds}s`}
             </span>
@@ -61,65 +63,65 @@ const Countdown = () => {
 
 // Updated Supporter Counter with Animated Dots
 const FloatingDotsCounter = () => {
-  const [count, setCount] = useState(0);
-  const [dotCount, setDotCount] = useState(1);
-  const fastTarget = 4671;
-  const finalCount = 6372;
+    const [count, setCount] = useState(0);
+    const [dotCount, setDotCount] = useState(1);
+    const fastTarget = 4671;
+    const finalCount = 6372;
 
-  useEffect(() => {
-    let current = 0;
-    let fastInterval: NodeJS.Timeout;
-    let slowInterval: NodeJS.Timeout;
+    useEffect(() => {
+        let current = 0;
+        let fastInterval: NodeJS.Timeout;
+        let slowInterval: NodeJS.Timeout;
 
-    // Fast count: +100 every 40ms
-    fastInterval = setInterval(() => {
-      current += 100;
-      setCount(current);
+        // Fast count: +100 every 40ms
+        fastInterval = setInterval(() => {
+            current += 100;
+            setCount(current);
 
-      if (current >= fastTarget) {
-        current = fastTarget;
-        clearInterval(fastInterval);
-        setCount(current); // Ensure it's updated to 4671
+            if (current >= fastTarget) {
+                current = fastTarget;
+                clearInterval(fastInterval);
+                setCount(current); // Ensure it's updated to 4671
 
-        // Slow count: +1 every 2000ms (sync with FloatingStarsCounter)
-        slowInterval = setInterval(() => {
-          current += 1;
-          setCount(current);
+                // Slow count: +1 every 2000ms (sync with FloatingStarsCounter)
+                slowInterval = setInterval(() => {
+                    current += 1;
+                    setCount(current);
 
-          if (current >= finalCount) {
+                    if (current >= finalCount) {
+                        clearInterval(slowInterval);
+                    }
+                }, 2000);
+            }
+        }, 40);
+
+        // Cleanup both intervals on unmount
+        return () => {
+            clearInterval(fastInterval);
             clearInterval(slowInterval);
-          }
-        }, 2000);
-      }
-    }, 40);
+        };
+    }, []);
 
-    // Cleanup both intervals on unmount
-    return () => {
-      clearInterval(fastInterval);
-      clearInterval(slowInterval);
-    };
-  }, []);
+    // Dot animation
+    useEffect(() => {
+        const dotInterval = setInterval(() => {
+            setDotCount((prev) => (prev % 3) + 1);
+        }, 500);
+        return () => clearInterval(dotInterval);
+    }, []);
 
-  // Dot animation
-  useEffect(() => {
-    const dotInterval = setInterval(() => {
-      setDotCount((prev) => (prev % 3) + 1);
-    }, 500);
-    return () => clearInterval(dotInterval);
-  }, []);
+    const loadingDots = ".".repeat(dotCount);
 
-  const loadingDots = ".".repeat(dotCount);
-
-  return (
-    <div className="mt-6 inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md">
-      <span className="text-red-600 font-extrabold text-lg">{loadingDots}</span>
-      <span className="text-red-600 font-extrabold text-sm sm:text-base">
-        {count.toLocaleString()} Meru Techers wamesema Kinoti Mungania Tosha
-        <br />
-        and the number is still growing{loadingDots}
-      </span>
-    </div>
-  );
+    return (
+        <div className="mt-6 inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md">
+            <span className="text-red-600 font-extrabold text-lg">{loadingDots}</span>
+            <span className="text-red-600 font-extrabold text-sm sm:text-base">
+                {count.toLocaleString()} Meru Techers wamesema Kinoti Mungania Tosha
+                <br />
+                and the number is still growing{loadingDots}
+            </span>
+        </div>
+    );
 };
 
 export const SplitSliderSection = () => {
