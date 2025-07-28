@@ -83,12 +83,23 @@ export const Contact = () => {
                 Stay informed about campaign events, manifesto updates, town halls, and election information.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                <Button
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                  onClick={() => {
+                    window.open(
+                      'https://wa.me/254723265140?text=Hi%20Mr.%20Kinoti%20Mungania%2C%20I%20would%20like%20to%20join%20your%20campaign%20WhatsApp%20group.%20Please%20add%20me',
+                      '_blank',
+                      'noopener,noreferrer'
+                    );
+                  }}
+                >
                   Join WhatsApp Group
                 </Button>
-                <Button variant="outline">
-                  Follow on Facebook
-                </Button>
+                <a href="https://www.facebook.com/kinoti.mungania.2025" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline">
+                    Follow on Facebook
+                  </Button>
+                </a>
               </div>
             </div>
 
@@ -100,7 +111,7 @@ export const Contact = () => {
               <a href="#" aria-label="Twitter" className="p-3 bg-primary/10 rounded-lg hover:bg-primary/20 transition">
                 <Twitter className="h-6 w-6 text-primary" />
               </a>
-              <a href="https://api.whatsapp.com/send?text=Support%20Kinoti%20Mungania%20for%20KUPPET%20Treasurer%20in%202026%20-%20Read%20his%20Manifesto:%20https://yourwebsite.com" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <a href="https://api.whatsapp.com/send?text=Support%20Kinoti%20Mungania%20for%20KUPPET%20Treasurer%20in%202026%20-%20Read%20his%20Manifesto:%20https://www.kinotimungania.com" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                 <div className="p-3 bg-primary/10 rounded-lg hover:bg-primary/20 transition">
                   <MessageSquare className="h-6 w-6 text-primary" />
                 </div>
