@@ -20,7 +20,7 @@ export const About = () => {
               <div>
                 <h3 className="text-xl font-semibold text-card-foreground mb-2">Educational Leadership</h3>
                 <p className="text-muted-foreground">
-                  An alumnus of Egerton University, with more than 20 years of dedicated experience in the education sector, having contributed in various leadership roles across schools in Meru County and beyond. Currently serving as the Deputy Principal at Miathene Boys High School.
+                  An alumnus of Egerton University, with more than 20 years of dedicated experience in the education sector, having contributed in various leadership roles across schools in Meru County and beyond. Currently serving as a Mathematics and Physics teacher in Meru County.
                 </p>
               </div>
             </div>
