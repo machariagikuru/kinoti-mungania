@@ -160,14 +160,38 @@ export const Contact = () => {
         <div className="mt-12 text-center px-4">
           <div className="bg-primary text-primary-foreground p-6 rounded-xl max-w-3xl mx-auto">
             <h4 className="text-xl font-bold mb-2">Ready to Make a Difference?</h4>
-            <p className="mb-4">Join the movement for transparent, effective teacher welfare management in Meru County.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/Kinoti-Mungania-Manifesto.pdf" download className="inline-flex">
-                <Button size="lg" className="flex items-center gap-2 bg-accent text-accent-foreground hover:bg-accent/90">
+            <p className="mb-4">
+              Join the movement for transparent, effective teacher welfare management in Meru County.<br /> Please share the materials below with your contacts.
+            </p>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
+              <a
+                href="/Kinoti-Mungania-Manifesto.pdf"
+                download
+                className="inline-flex"
+              >
+                <Button
+                  size="lg"
+                  className="flex items-center gap-2 bg-accent text-accent-foreground hover:bg-accent/90"
+                >
                   <Download className="w-5 h-5" />
                   Download Manifesto
                 </Button>
               </a>
+
+              <a
+                href="/Kinoti-Mungania-Poster.png"
+                download
+                className="inline-flex"
+              >
+                <Button
+                  size="lg"
+                  className="flex items-center gap-2 bg-accent text-accent-foreground hover:bg-accent/90"
+                >
+                  <Download className="w-5 h-5" />
+                  Download Poster
+                </Button>
+              </a>
+
               <Button
                 size="lg"
                 className="flex items-center gap-2 border border-white text-white hover:bg-white hover:text-primary transition"
@@ -179,6 +203,7 @@ export const Contact = () => {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );
