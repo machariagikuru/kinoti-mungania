@@ -255,15 +255,15 @@ export const Manifesto = () => {
 
           <div className="text-center">
             <div
-              className="bg-green-600/90 text-white p-6 rounded-xl max-w-2xl mx-auto
+              className="bg-primary text-primary-foreground p-6 rounded-xl max-w-2xl mx-auto
                transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
             >
               <h4 className="text-xl font-bold mb-3">Ready to Transform KUPPET Meru?</h4>
               <p className="mb-4 flex items-center justify-center text-xl font-bold">
-                <Vote className="h-10 w-10 mr-3 text-white" />
+                <Vote className="h-10 w-10 mr-3 text-primary-foreground" />
                 Vote Kinoti Mungania for Treasurer – KUPPET Elections 2026
               </p>
-              <p className="text-sm font-medium">
+              <p className="text-sm text-primary-foreground font-medium">
                 "Together, we will build a KUPPET that truly serves its members with dignity, transparency, and excellence."
               </p>
             </div>
