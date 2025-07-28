@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
     {
@@ -60,49 +59,67 @@ const Countdown = () => {
     );
 };
 
+// Updated Supporter Counter with Animated Dots
+const FloatingDotsCounter = () => {
+  const [count, setCount] = useState(0);
+  const [dotCount, setDotCount] = useState(1);
+  const fastTarget = 4671;
+  const finalCount = 5372;
 
-// Supporter counter component
-const FloatingStarsCounter = () => {
-    const [count, setCount] = useState(0);
-    const fastTarget = 4671;
-    const finalCount = 5372;
+  useEffect(() => {
+    let current = 0;
+    let fastInterval: NodeJS.Timeout;
+    let slowInterval: NodeJS.Timeout;
 
-    useEffect(() => {
-        let current = 0;
-        let fastInterval: NodeJS.Timeout;
-        let slowInterval: NodeJS.Timeout;
+    // Fast count: +100 every 40ms
+    fastInterval = setInterval(() => {
+      current += 100;
+      setCount(current);
 
-        fastInterval = setInterval(() => {
-            current += 100;
-            if (current >= fastTarget) {
-                current = fastTarget;
-                clearInterval(fastInterval);
+      if (current >= fastTarget) {
+        current = fastTarget;
+        clearInterval(fastInterval);
+        setCount(current); // Ensure it's updated to 4671
 
-                slowInterval = setInterval(() => {
-                    current += 1;
-                    setCount(current);
-                    if (current >= finalCount) {
-                        clearInterval(slowInterval);
-                    }
-                }, 2000);
-            }
-            setCount(current);
-        }, 40);
+        // Slow count: +1 every 2000ms (sync with FloatingStarsCounter)
+        slowInterval = setInterval(() => {
+          current += 1;
+          setCount(current);
 
-        return () => {
-            clearInterval(fastInterval);
+          if (current >= finalCount) {
             clearInterval(slowInterval);
-        };
-    }, []);
+          }
+        }, 2000);
+      }
+    }, 40);
 
-    return (
-        <div className="mt-6 inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full shadow-md">
-            <Star className="w-5 h-5 text-yellow-400" />
-            <span className="font-semibold text-sm sm:text-base">
-                {count.toLocaleString()} Meru teachers supporting Kinoti Mungania
-            </span>
-        </div>
-    );
+    // Cleanup both intervals on unmount
+    return () => {
+      clearInterval(fastInterval);
+      clearInterval(slowInterval);
+    };
+  }, []);
+
+  // Dot animation
+  useEffect(() => {
+    const dotInterval = setInterval(() => {
+      setDotCount((prev) => (prev % 3) + 1);
+    }, 500);
+    return () => clearInterval(dotInterval);
+  }, []);
+
+  const loadingDots = ".".repeat(dotCount);
+
+  return (
+    <div className="mt-6 inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md">
+      <span className="text-red-600 font-extrabold text-lg">{loadingDots}</span>
+      <span className="text-red-600 font-extrabold text-sm sm:text-base">
+        {count.toLocaleString()} Techers supporting Kinoti Mungania
+        <br />
+        as the KUPPET Meru County Treasurer
+      </span>
+    </div>
+  );
 };
 
 export const SplitSliderSection = () => {
@@ -122,7 +139,7 @@ export const SplitSliderSection = () => {
     return (
         <section className="py-20 lg:py-32 bg-background text-foreground">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                {/* Text Content Side (modified as requested) */}
+                {/* Text Content Side */}
                 <div className="text-center md:text-left">
                     <h2 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 leading-tight">
                         This is What We Deserve:
@@ -132,11 +149,8 @@ export const SplitSliderSection = () => {
                         Our voice must be louder, our rights clearer, and our support systems stronger.
                     </p>
 
-                    {/* Countdown */}
                     <Countdown />
-
-                    {/* Supporter Counter */}
-                    <FloatingStarsCounter />
+                    <FloatingDotsCounter />
 
                     <p className="text-xl md:text-2xl font-bold text-primary mb-8 mt-4">
                         #WelcomeToTeamKinoti
@@ -148,7 +162,7 @@ export const SplitSliderSection = () => {
                             if (el) el.scrollIntoView({ behavior: "smooth" });
                         }}
                         className="px-8 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition duration-300
-                       shadow-lg hover:shadow-xl transform hover:scale-105 text-lg font-semibold"
+              shadow-lg hover:shadow-xl transform hover:scale-105 text-lg font-semibold"
                         aria-label="Learn more about Kinoti Mungania's vision"
                     >
                         Learn More
@@ -157,7 +171,6 @@ export const SplitSliderSection = () => {
 
                 {/* Image Slider Side */}
                 <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden rounded-xl shadow-lg border border-border">
-                    {/* KUPPET logos */}
                     <img
                         src="/images/kuppet-logo.jpg"
                         alt="KUPPET Logo Left"
@@ -187,7 +200,7 @@ export const SplitSliderSection = () => {
                     <button
                         onClick={prevSlide}
                         className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-primary/80 text-primary-foreground p-3 rounded-full z-30
-                       hover:bg-primary hover:scale-110 transition duration-300 shadow-md"
+              hover:bg-primary hover:scale-110 transition duration-300 shadow-md"
                         aria-label="Previous Slide"
                     >
                         <ChevronLeft className="w-6 h-6" />
@@ -195,7 +208,7 @@ export const SplitSliderSection = () => {
                     <button
                         onClick={nextSlide}
                         className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-primary/80 text-primary-foreground p-3 rounded-full z-30
-                       hover:bg-primary hover:scale-110 transition duration-300 shadow-md"
+              hover:bg-primary hover:scale-110 transition duration-300 shadow-md"
                         aria-label="Next Slide"
                     >
                         <ChevronRight className="w-6 h-6" />
