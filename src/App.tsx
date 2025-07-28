@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react"; // ✅ Import added
 import ReactGA from "react-ga4";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ const App = () => {
           </Routes>
         </BrowserRouter>
         <Analytics /> {/* ✅ Vercel Analytics */}
+        <SpeedInsights /> {/* ✅ Vercel Speed Insights */}
       </TooltipProvider>
     </QueryClientProvider>
   );
