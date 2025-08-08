@@ -66,7 +66,7 @@ export const TeamKinotiImageSection = () => {
                     <div className="absolute bottom-4 left-4 flex flex-col items-center z-30">
                         <button
                             onClick={() =>
-                                handleShare("/downloads/kinoti-poster.jpg", "Kinoti-Mungania-Poster.jpg")
+                                handleShare("/kinoti-poster.jpg", "Kinoti-Mungania-Poster.jpg")
                             }
                             className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-base font-semibold"
                         >
@@ -80,7 +80,7 @@ export const TeamKinotiImageSection = () => {
                     <div className="absolute bottom-4 right-4 flex flex-col items-center z-30">
                         <button
                             onClick={() =>
-                                handleShare("/images/Kinoti-Mungania-Manifesto.pdf", "Kinoti-Mungania-Manifesto.pdf")
+                                handleShare("/Kinoti-Mungania-Manifesto.pdf", "Kinoti-Mungania-Manifesto.pdf")
                             }
                             className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-base font-semibold"
                         >
