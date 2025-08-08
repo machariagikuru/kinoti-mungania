@@ -16,8 +16,8 @@ const Index = () => {
       <TeamKinotiImageSection />
       <TeamKinotiTextSection />
       <Hero />
-      <About />
       <Manifesto />
+      <About />
       <Contact />
       <FloatingStarsCounter />
     </div>
