@@ -51,7 +51,7 @@ export const TeamKinotiImageSection = () => {
                 <div className="relative w-full md:w-[500px] h-[400px] md:h-[500px] flex items-center justify-center">
                     {/* Top Left Logo */}
                     <img
-                        src="/images/kuppet-logo.jpg"
+                        src="/images/Kinoti-Mungania-Poster.png"
                         alt="KUPPET Logo Left"
                         className="absolute top-4 left-4 w-16 h-16 object-contain opacity-80 z-20"
                     />
@@ -80,7 +80,7 @@ export const TeamKinotiImageSection = () => {
                     <div className="absolute bottom-4 right-4 flex flex-col items-center z-30">
                         <button
                             onClick={() =>
-                                handleShare("/downloads/kinoti-manifesto.pdf", "Kinoti-Mungania-Manifesto.pdf")
+                                handleShare("/images/Kinoti-Mungania-Manifesto.pdf", "Kinoti-Mungania-Manifesto.pdf")
                             }
                             className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-base font-semibold"
                         >
@@ -95,9 +95,8 @@ export const TeamKinotiImageSection = () => {
                         {slides.map((slide, index) => (
                             <div
                                 key={slide.id}
-                                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                                    index === current ? "opacity-100 z-10" : "opacity-0 z-0"
-                                }`}
+                                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === current ? "opacity-100 z-10" : "opacity-0 z-0"
+                                    }`}
                                 aria-hidden={index !== current}
                             >
                                 <img
@@ -132,9 +131,8 @@ export const TeamKinotiImageSection = () => {
                                 <button
                                     key={index}
                                     onClick={() => setCurrent(index)}
-                                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                                        index === current ? "bg-primary w-5" : "bg-primary/50"
-                                    }`}
+                                    className={`w-3 h-3 rounded-full transition-all duration-300 ${index === current ? "bg-primary w-5" : "bg-primary/50"
+                                        }`}
                                     aria-label={`Go to slide ${index + 1}`}
                                 />
                             ))}
