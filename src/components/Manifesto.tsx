@@ -206,7 +206,7 @@ export const Manifesto = () => {
         className="py-20 bg-gradient-to-br from-background via-secondary/20 to-accent/10"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Heading */}
+          {/* --- Manifesto Section Heading --- */}
           <div className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 manifesto-animate-fade-in drop-shadow-lg">
               My 8-Point Manifesto for Transformation
@@ -226,13 +226,15 @@ export const Manifesto = () => {
             </div>
           </div>
 
-          {/* Manifesto Cards */}
+          {/* --- Manifesto Cards --- */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
             {manifestoPoints.map((point, index) => (
               <div
                 key={index}
                 className={`rounded-xl p-7 shadow-lg border-2 ${point.border} hover:shadow-xl transition-all duration-300 hover:scale-[1.03] ${point.cardBg} backdrop-blur-sm manifesto-animate-fade-in manifesto-card-pop`}
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                }}
               >
                 <div className="flex items-start space-x-4">
                   <div className={`p-3 rounded-full ${point.iconBg} flex-shrink-0 shadow-md manifesto-animate-float border-2 border-white`}>
@@ -261,74 +263,68 @@ export const Manifesto = () => {
             ))}
           </div>
 
-          {/* Why This Manifesto Matters */}
-          <div className="bg-gradient-to-r from-primary/10 via-white to-accent/10 p-10 rounded-xl max-w-4xl mx-auto text-center shadow-xl manifesto-animate-float border-2 border-primary/30 mb-12">
-            <h3 className="text-2xl font-bold mb-4 text-primary">Why This Manifesto Matters</h3>
-            <p className="text-xl mb-6 text-gray-700">
-              These aren't just promises – they're commitments backed by experience, expertise, and a proven track record of financial management excellence.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div>
-                <div className="text-3xl font-bold mb-2 text-primary">7,000+</div>
-                <div className="text-gray-700">Teachers to benefit across Meru County</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold mb-2 text-primary">16</div>
-                <div className="text-gray-700">Meru Sub-counties covered</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold mb-2 text-primary">20+</div>
-                <div className="text-gray-700">Years experience</div>
+          {/* --- Manifesto Footer Cards --- */}
+          <div className="mt-10 space-y-10">
+            {/* Why This Manifesto Matters */}
+            <div className="bg-gradient-to-r from-primary/10 via-white to-accent/10 p-10 rounded-xl max-w-4xl mx-auto text-center shadow-xl manifesto-animate-float border-2 border-primary/30">
+              <h3 className="text-2xl font-bold mb-4 text-primary">Why This Manifesto Matters</h3>
+              <p className="text-xl mb-6 text-gray-700">
+                These aren't just promises – they're commitments backed by experience, expertise, and a proven track record of financial management excellence.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div className="text-3xl font-bold mb-2 text-primary">7,000+</div>
+                  <div className="text-gray-700">Teachers to benefit across Meru County</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold mb-2 text-primary">16</div>
+                  <div className="text-gray-700">Meru Sub-counties covered</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold mb-2 text-primary">20+</div>
+                  <div className="text-gray-700">Years experience</div>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* About Kinoti Mungania */}
-          <div className="bg-white p-10 rounded-xl max-w-5xl mx-auto text-gray-800 shadow-lg border-2 border-primary/20">
-            <h3 className="text-2xl font-bold mb-4 text-primary text-center">About Kinoti Mungania</h3>
-            <p className="text-lg mb-6 text-center font-medium">
-              A dedicated educator and financial leader committed to serving the teachers of Meru County
-            </p>
-            <div className="space-y-4">
-              <div>
-                <h4 className="font-semibold text-gray-900">Educational Leadership</h4>
-                <p>
-                  An alumnus of Egerton University, with more than 20 years of dedicated experience in the education sector, having contributed in various leadership roles across schools in Meru County and beyond. Mr. Kinoti Mungania is currently serving as a Mathematics and Physics teacher at Miathene Boys High School.
+            {/* Commitment Card */}
+            <div className="bg-gradient-to-r from-secondary/10 via-white to-primary/10 p-10 rounded-xl border-2 border-primary/20 shadow-lg backdrop-blur-sm">
+              <h3 className="text-2xl font-bold text-primary mb-4 text-center">My Commitment to You</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-900">Transparency Guarantee:</h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li>• Monthly financial reports published online</li>
+                    <li>• Open-door policy for member inquiries</li>
+                    <li>• Annual general meetings with full disclosure</li>
+                  </ul>
+                </div>
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-gray-900">Accountability Measures:</h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li>• Monthly progress updates on all initiatives</li>
+                    <li>• Independent audit of all welfare funds</li>
+                    <li>• Member feedback systems and response protocols</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Ready to Transform Card */}
+            <div className="text-center">
+              <div
+                className="bg-gradient-to-r from-accent/10 via-white to-primary/10 p-8 rounded-xl max-w-2xl mx-auto
+                 transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl shadow-lg manifesto-animate-float border-2 border-primary/30"
+              >
+                <h4 className="text-xl font-bold mb-3 text-primary">Ready to Transform KUPPET Meru?</h4>
+                <p className="mb-4 flex items-center justify-center text-xl font-bold text-primary">
+                  <Vote className="h-10 w-10 mr-3 text-primary" />
+                  Vote Kinoti Mungania for Treasurer – KUPPET Elections 2026
+                </p>
+                <p className="text-sm text-gray-700 font-medium">
+                  "Together, we will build a KUPPET that truly serves its members with dignity, transparency, and excellence."
                 </p>
               </div>
-              <div>
-                <h4 className="font-semibold text-gray-900">Financial Expertise</h4>
-                <p>
-                  Extensive experience in managing and driving the success of private businesses and projects, with a focus on financial strategy, growth, and operational efficiency.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900">Community Service</h4>
-                <p>
-                  A committed KUPPET member since 2007, I’ve been a strong advocate for teachers' rights. I’ve served in key leadership roles in Meru County, including Science Congress Secretary for the larger Tigania District and Sports Secretary for Tigania East. Currently, I’m the Treasurer for the Meru Spotlight Group and several other teachers' groups.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900">Local Knowledge</h4>
-                <p>
-                  Born and raised in Meru County, and having worked here for many years, I have a deep, firsthand understanding of the unique challenges teachers face in the region.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900">My Vision</h4>
-                <p className="italic">
-                  "To transform KUPPET Meru Branch into a model of excellence where every teacher feels supported, valued, and empowered. Through transparent financial management and comprehensive welfare programs, we will build a stronger future for our educational community."
-                </p>
-              </div>
-              <ul className="list-disc pl-5 text-gray-700 mt-4 space-y-2">
-                <li>Passionate about teacher welfare</li>
-                <li>Proven financial management skills</li>
-                <li>Committed to transparency</li>
-              </ul>
-              <p className="mt-4 italic text-center text-lg font-medium text-primary">
-                "Together, we will ensure that no teacher faces challenges alone, and every educator in Meru County thrives with dignity and support."
-                <br />– Kinoti Mungania
-              </p>
             </div>
           </div>
         </div>
