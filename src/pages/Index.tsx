@@ -7,7 +7,7 @@ import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Navigation } from "@/components/Navigation";
 import { FloatingStarsCounter } from "@/components/FloatingStarsCounter";
-import { Footer } from "@/components/Footer";
+import { Footer } from "@/components/footer";;
 
 
 const Index = () => {
