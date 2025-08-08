@@ -107,24 +107,6 @@ export const TeamKinotiImageSection = () => {
                             </div>
                         ))}
 
-                        {/* Navigation Buttons */}
-                        <button
-                            onClick={prevSlide}
-                            className="absolute top-1/2 left-16 transform -translate-y-1/2 bg-primary/80 text-primary-foreground p-3 rounded-full z-30
-                  hover:bg-primary hover:scale-110 transition duration-300 shadow-md"
-                            aria-label="Previous Slide"
-                        >
-                            <ChevronLeft className="w-6 h-6" />
-                        </button>
-                        <button
-                            onClick={nextSlide}
-                            className="absolute top-1/2 right-16 transform -translate-y-1/2 bg-primary/80 text-primary-foreground p-3 rounded-full z-30
-                  hover:bg-primary hover:scale-110 transition duration-300 shadow-md"
-                            aria-label="Next Slide"
-                        >
-                            <ChevronRight className="w-6 h-6" />
-                        </button>
-
                         {/* Dots */}
                         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
                             {slides.map((_, index) => (
