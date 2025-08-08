@@ -51,7 +51,7 @@ export const TeamKinotiImageSection = () => {
                 <div className="relative w-full md:w-[500px] h-[400px] md:h-[500px] flex items-center justify-center">
                     {/* Top Left Logo */}
                     <img
-                        src="/images/Kinoti-Mungania-Poster.png"
+                        src="/images/kuppet-logo.jpg"
                         alt="KUPPET Logo Left"
                         className="absolute top-4 left-4 w-16 h-16 object-contain opacity-80 z-20"
                     />
