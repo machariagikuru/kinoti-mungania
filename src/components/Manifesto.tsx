@@ -1,275 +1,338 @@
 // components/Manifesto.tsx
 
 import {
-  Shield,
-  Users,
-  Globe,
-  Building,
-  HeartHandshake,
-  Coins,
-  BookOpen,
-  TrendingUp,
-  CheckCircle,
-  Vote, // Imported Vote icon
+  Award,
+  Users2,
+  Globe2,
+  Banknote,
+  Heart,
+  PiggyBank,
+  GraduationCap,
+  Building2,
+  ShieldCheck,
+  Vote,
+  CheckCircle2,
 } from "lucide-react";
 
-// Define a type for your ManifestoPoint to improve type safety and clarity
+// Manifesto types
 interface ManifestoDescription {
   intro?: string;
   bullets?: string[];
 }
 
 interface ManifestoPoint {
-  icon: React.ElementType; // Lucide icons are React components
+  icon: React.ElementType;
   title: string;
-  description: ManifestoDescription; // Now always an object
+  description: ManifestoDescription;
   impact: string;
   color: string;
+  iconBg: string;
+  cardBg: string;
+  border: string;
 }
 
 const manifestoPoints: ManifestoPoint[] = [
   {
-    icon: Shield,
-    title: "Teacher Welfare Beyond the Grave",
+    icon: ShieldCheck,
+    title: "Comprehensive Teacher Welfare",
     description: {
-      intro: "Many teachers only receive assistance from the union during funerals, leaving long-term illnesses and family emergencies unaddressed. I will change this by establishing a broader welfare scheme that supports teachers during illness and ensures children left behind are not forgotten.",
+      intro: "Support for teachers in illness, emergencies, and beyond. No teacher or family left behind.",
       bullets: [
-        "Support for long-term illnesses",
-        "Education support for children of deceased teachers",
-        "Emergency relief for distressed members"
+        "Long-term illness support",
+        "Education for children of deceased teachers",
+        "Emergency relief for families",
       ],
     },
-    impact: "7,000+ Meru County teachers will benefit",
-    color: "bg-primary/20 text-primary",
+    impact: "7,000+ teachers protected",
+    color: "text-primary",
+    iconBg: "bg-primary/90",
+    cardBg: "bg-gradient-to-br from-primary/10 via-white to-primary/5",
+    border: "border-primary",
   },
   {
-    icon: Users,
-    title: "Inclusive Welfare Committee for Transparency",
+    icon: Users2,
+    title: "Transparent & Inclusive Welfare Committee",
     description: {
-      intro: "Teachers deserve reliable support in times of need. I’ll establish a transparent Welfare committee with elected reps from every sub-county in Meru to offer real help during illness and loss, and a digital platform for easy access and accountability.",
+      intro: "A welfare committee with elected reps from every sub-county, ensuring accountability and easy access.",
       bullets: [
-        "1 elected representative per sub-county",
-        "Accountable management of welfare contributions",
+        "1 rep per sub-county",
+        "Digital platform for welfare",
+        "Accountable management",
       ],
     },
-    impact: "16 elected reps, 1 per sub-county",
-    color: "bg-accent/20 text-accent-foreground",
+    impact: "16 sub-counties represented",
+    color: "text-accent-foreground",
+    iconBg: "bg-accent/80",
+    cardBg: "bg-gradient-to-br from-accent/10 via-white to-accent/5",
+    border: "border-accent",
   },
   {
-    icon: Globe,
-    title: "Meru KUPPET Digital Platform",
+    icon: Globe2,
+    title: "Digital Union Platform",
     description: {
-      intro: "Important updates and services are hard to find or delayed, keeping members in the dark. I will launch a Meru KUPPET website to ensure every teacher can access updates, welfare details, and union services with ease—from anywhere, anytime.",
+      intro: "A modern website for updates, welfare, and union services. Accessible anywhere, anytime.",
       bullets: [
-        "Mobile-friendly interface",
-        "Digitized welfare applications",
-        "Track welfare claims online",
-        "Secure document and claims portal",
-        "Real-time access to updates",
+        "Mobile-friendly portal",
+        "Track welfare claims",
+        "Secure document access",
+        "Real-time updates",
       ],
     },
-    impact: "24/7 access to union services",
-    color: "bg-secondary/40 text-card-foreground",
+    impact: "24/7 access for all teachers",
+    color: "text-secondary-foreground",
+    iconBg: "bg-secondary/80",
+    cardBg: "bg-gradient-to-br from-secondary/10 via-white to-secondary/5",
+    border: "border-secondary",
   },
   {
-    icon: Coins,
-    title: "Prudent Financial Leadership & Assets",
+    icon: Banknote,
+    title: "Financial Transparency & Asset Growth",
     description: {
-      intro: "Union funds often lack accountability and lasting impact. I’ll enforce financial transparency and invest in assets—land, rentals, and a branch bus—to build long-term value for KUPPET Meru members.",
+      intro: "Transparent management of union funds and investment in assets for lasting value.",
       bullets: [
-        "Regular financial audits",
-        "Transparent reporting",
-        "Provide monthly financial reports to members",
-        "Acquire land for KUPPET Meru Branch offices",
-        "Build rental properties for long-term financial sustainability",
-        "Buy KUPPET Meru branch bus for mobility and members functions",
+        "Monthly financial reports",
+        "Regular audits",
+        "Invest in land, rentals, branch bus",
       ],
     },
-    impact: "Building long-term branch value",
-    color: "bg-secondary/50 text-card-foreground",
+    impact: "Long-term financial sustainability",
+    color: "text-primary",
+    iconBg: "bg-primary/80",
+    cardBg: "bg-gradient-to-br from-primary/5 via-white to-primary/10",
+    border: "border-primary",
   },
   {
-    icon: HeartHandshake,
-    title: "Fight for Medical Insurance that works",
+    icon: Heart,
+    title: "Effective Medical Insurance",
     description: {
-      intro: "Teachers often struggle to access medical care through Minet/AON, facing delays, unanswered calls, and rejected approvals. I will work with the national office to make insurance access seamless—so teachers get treatment without chasing people for help.",
+      intro: "Seamless access to medical care. No more delays or rejected approvals.",
       bullets: [
-        "Regular audits of medical providers",
-        "Wider acceptance of teachers' cover in public and private hospitals",
-        "Automatic approvals for critical treatments",
-        "No more bureaucratic delays",
+        "Wider hospital acceptance",
+        "Automatic approvals",
+        "Regular audits of providers",
       ],
     },
-    impact: "Faster, seamless healthcare access",
-    color: "bg-accent/30 text-accent-foreground",
+    impact: "Faster, reliable healthcare",
+    color: "text-accent-foreground",
+    iconBg: "bg-accent/90",
+    cardBg: "bg-gradient-to-br from-accent/5 via-white to-accent/10",
+    border: "border-accent",
   },
   {
-    icon: TrendingUp,
-    title: "Transparent Promotions & Fair Compensation",
+    icon: Award,
+    title: "Fair Promotions & Compensation",
     description: {
-      intro: "Teachers face delayed promotions and stagnant pay. I’ll coordinate with KUPPET national office to fight for streamlined promotions, regular salary reviews, and improved allowances—ensuring fair, timely compensation for all teachers.",
+      intro: "Fight for streamlined promotions, regular salary reviews, and improved allowances.",
       bullets: [
-        "Streamlined promotion processes",
+        "Streamlined promotion process",
         "Regular salary reviews",
-        "Enhanced commuter and house allowances",
-        "Improved terms for all teachers",
+        "Better allowances",
       ],
     },
-    impact: "Better pay & career progression",
-    color: "bg-accent/25 text-accent-foreground",
+    impact: "Career growth for all",
+    color: "text-primary",
+    iconBg: "bg-primary/90",
+    cardBg: "bg-gradient-to-br from-primary/10 via-white to-primary/5",
+    border: "border-primary",
   },
   {
-    icon: BookOpen,
-    title: "Regular Financial & Rights Workshops for Teachers",
+    icon: GraduationCap,
+    title: "Empowerment & Rights Workshops",
     description: {
-      intro: "Teachers are often taken advantage of due to limited knowledge of their rights and finances. I’ll hold regular workshops on financial literacy, rights awareness, and empowerment so every teacher becomes informed, confident, and harder to exploit.",
+      intro: "Regular workshops on financial literacy and teachers' rights for empowerment.",
       bullets: [
-        "Regular financial literacy workshops",
-        "Teachers' rights awareness sessions",
-        "Empowerment seminars on savings and investments",
-        "Access to expert speakers and resources",
+        "Financial literacy sessions",
+        "Rights awareness seminars",
+        "Expert speakers",
       ],
     },
-    impact: "Empowering 7000+ teachers with knowledge",
-    color: "bg-primary/25 text-primary",
+    impact: "Empowered, informed teachers",
+    color: "text-secondary-foreground",
+    iconBg: "bg-secondary/90",
+    cardBg: "bg-gradient-to-br from-secondary/10 via-white to-secondary/5",
+    border: "border-secondary",
   },
   {
-    icon: Building,
-    title: "Stronger, Independent Junior Secondary Schools",
+    icon: Building2,
+    title: "Autonomous Junior Secondary Schools",
     description: {
-      intro: "Junior Secondary Schools remain underfunded and poorly structured, limiting their growth and identity. I will push in coordination with the national office for full autonomy, proper staffing, distinct boards, and the resources JSS schools need to thrive independently.",
+      intro: "Push for full autonomy, proper staffing, and resources for thriving JSS schools.",
       bullets: [
-        "Full autonomy for JSS schools",
-        "Adequate staffing and funding",
-        "Distinct boards for JSS schools",
-        "Advocacy for better resources and support",
+        "Full autonomy for JSS",
+        "Adequate staffing & funding",
+        "Distinct boards",
       ],
     },
-    impact: "Fight for a thriving JSS education system",
-    color: "bg-primary/30 text-primary",
+    impact: "Thriving JSS education",
+    color: "text-primary",
+    iconBg: "bg-primary/90",
+    cardBg: "bg-gradient-to-br from-primary/5 via-white to-primary/10",
+    border: "border-primary",
   },
 ];
 
+const customStyles = `
+@keyframes manifesto-float {
+  0% { transform: translateY(0px);}
+  50% { transform: translateY(-8px);}
+  100% { transform: translateY(0px);}
+}
+.manifesto-animate-float {
+  animation: manifesto-float 2.5s ease-in-out infinite;
+}
+@keyframes manifesto-fade-in {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
+}
+.manifesto-animate-fade-in {
+  animation: manifesto-fade-in 1.2s ease-in;
+}
+@keyframes card-pop {
+  0% { transform: scale(0.95);}
+  60% { transform: scale(1.03);}
+  100% { transform: scale(1);}
+}
+.manifesto-card-pop {
+  animation: card-pop 0.8s cubic-bezier(.17,.67,.83,.67);
+}
+`;
+
 export const Manifesto = () => {
   return (
-    <section id="manifesto" className="py-16 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            My 8-Point Manifesto for Transformation
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
-            Comprehensive reforms that will revolutionize teacher welfare and financial management in Meru County
-          </p>
-          <div className="flex items-center justify-center space-x-2 text-primary font-semibold">
-            <CheckCircle className="h-5 w-5" />
-            <span>Evidence-Based Solutions</span>
-            <span className="mx-2">•</span>
-            <CheckCircle className="h-5 w-5" />
-            <span>Financially Sustainable</span>
-            <span className="mx-2">•</span>
-            <CheckCircle className="h-5 w-5" />
-            <span>Teacher-Centered</span>
+    <>
+      <style>{customStyles}</style>
+      <section
+        id="manifesto"
+        className="py-20 bg-gradient-to-br from-background via-secondary/20 to-accent/10"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Heading */}
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-primary mb-4 manifesto-animate-fade-in drop-shadow-lg">
+              My 8-Point Manifesto for Transformation
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6 manifesto-animate-fade-in">
+              Comprehensive reforms that will revolutionize teacher welfare and financial management in Meru County
+            </p>
+            <div className="flex items-center justify-center space-x-2 text-primary font-semibold manifesto-animate-float">
+              <CheckCircle2 className="h-5 w-5" />
+              <span>Evidence-Based Solutions</span>
+              <span className="mx-2">•</span>
+              <CheckCircle2 className="h-5 w-5" />
+              <span>Financially Sustainable</span>
+              <span className="mx-2">•</span>
+              <CheckCircle2 className="h-5 w-5" />
+              <span>Teacher-Centered</span>
+            </div>
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {manifestoPoints.map((point, index) => (
-            <div
-              key={index}
-              className="bg-card rounded-xl p-6 shadow-sm border border-border hover:shadow-md transition-all duration-300 hover:scale-105"
-            >
-              <div className="flex items-start space-x-4">
-                <div className={`p-3 rounded-lg ${point.color} flex-shrink-0`}>
-                  <point.icon className="h-6 w-6" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-card-foreground mb-3">
-                    {point.title}
-                  </h3>
-                  {/* Conditional rendering for description based on intro and bullets */}
-                  {point.description.intro && (
-                    <p className="text-muted-foreground leading-relaxed mb-2">
-                      {point.description.intro}
-                    </p>
-                  )}
-                  {point.description.bullets && point.description.bullets.length > 0 && (
-                    <ul className="list-disc pl-5 space-y-2 text-muted-foreground leading-relaxed mb-3">
-                      {point.description.bullets.map((bullet, bulletIndex) => (
-                        <li key={bulletIndex}>{bullet}</li>
-                      ))}
-                    </ul>
-                  )}
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                    {point.impact}
+          {/* Manifesto Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+            {manifestoPoints.map((point, index) => (
+              <div
+                key={index}
+                className={`rounded-xl p-7 shadow-lg border-2 ${point.border} hover:shadow-xl transition-all duration-300 hover:scale-[1.03] ${point.cardBg} backdrop-blur-sm manifesto-animate-fade-in manifesto-card-pop`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="flex items-start space-x-4">
+                  <div className={`p-3 rounded-full ${point.iconBg} flex-shrink-0 shadow-md manifesto-animate-float border-2 border-white`}>
+                    <point.icon className={`h-8 w-8 ${point.color}`} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-3 drop-shadow-sm text-gray-900">{point.title}</h3>
+                    {point.description.intro && (
+                      <p className="text-gray-700 leading-relaxed mb-2">
+                        {point.description.intro}
+                      </p>
+                    )}
+                    {point.description.bullets && point.description.bullets.length > 0 && (
+                      <ul className="list-disc pl-5 space-y-2 text-gray-700 leading-relaxed mb-3">
+                        {point.description.bullets.map((bullet, bulletIndex) => (
+                          <li key={bulletIndex}>{bullet}</li>
+                        ))}
+                      </ul>
+                    )}
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium shadow-sm">
+                      {point.impact}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <div className="mt-16 space-y-8">
-          <div className="bg-primary text-primary-foreground p-8 rounded-xl max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl font-bold mb-4">Why This Manifesto Matters</h3>
-            <p className="text-xl mb-6">
+          {/* Why This Manifesto Matters */}
+          <div className="bg-gradient-to-r from-primary/10 via-white to-accent/10 p-10 rounded-xl max-w-4xl mx-auto text-center shadow-xl manifesto-animate-float border-2 border-primary/30 mb-12">
+            <h3 className="text-2xl font-bold mb-4 text-primary">Why This Manifesto Matters</h3>
+            <p className="text-xl mb-6 text-gray-700">
               These aren't just promises – they're commitments backed by experience, expertise, and a proven track record of financial management excellence.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div>
-                <div className="text-3xl font-bold mb-2">7,000+</div>
-                <div className="text-primary-foreground/80">Teachers to benefit across Meru County</div>
+                <div className="text-3xl font-bold mb-2 text-primary">7,000+</div>
+                <div className="text-gray-700">Teachers to benefit across Meru County</div>
               </div>
               <div>
-                <div className="text-3xl font-bold mb-2">16</div>
-                <div className="text-primary-foreground/80">Meru Sub-counties covered</div>
+                <div className="text-3xl font-bold mb-2 text-primary">16</div>
+                <div className="text-gray-700">Meru Sub-counties covered</div>
               </div>
               <div>
-                <div className="text-3xl font-bold mb-2">20+</div>
-                <div className="text-primary-foreground/80">Years experience</div>
+                <div className="text-3xl font-bold mb-2 text-primary">20+</div>
+                <div className="text-gray-700">Years experience</div>
               </div>
             </div>
           </div>
 
-          <div className="bg-card p-8 rounded-xl border-2 border-primary/20">
-            <h3 className="text-2xl font-bold text-card-foreground mb-4 text-center">My Commitment to You</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-3">
-                <h4 className="font-semibold text-card-foreground">Transparency Guarantee:</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Monthly financial reports published online</li>
-                  <li>• Open-door policy for member inquiries</li>
-                  <li>• Annual general meetings with full disclosure</li>
-                </ul>
+          {/* About Kinoti Mungania */}
+          <div className="bg-white p-10 rounded-xl max-w-5xl mx-auto text-gray-800 shadow-lg border-2 border-primary/20">
+            <h3 className="text-2xl font-bold mb-4 text-primary text-center">About Kinoti Mungania</h3>
+            <p className="text-lg mb-6 text-center font-medium">
+              A dedicated educator and financial leader committed to serving the teachers of Meru County
+            </p>
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-semibold text-gray-900">Educational Leadership</h4>
+                <p>
+                  An alumnus of Egerton University, with more than 20 years of dedicated experience in the education sector, having contributed in various leadership roles across schools in Meru County and beyond. Mr. Kinoti Mungania is currently serving as a Mathematics and Physics teacher at Miathene Boys High School.
+                </p>
               </div>
-              <div className="space-y-3">
-                <h4 className="font-semibold text-card-foreground">Accountability Measures:</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Monthly progress updates on all initiatives</li>
-                  <li>• Independent audit of all welfare funds</li>
-                  <li>• Member feedback systems and response protocols</li>
-                </ul>
+              <div>
+                <h4 className="font-semibold text-gray-900">Financial Expertise</h4>
+                <p>
+                  Extensive experience in managing and driving the success of private businesses and projects, with a focus on financial strategy, growth, and operational efficiency.
+                </p>
               </div>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <div
-              className="bg-primary text-primary-foreground p-6 rounded-xl max-w-2xl mx-auto
-               transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
-            >
-              <h4 className="text-xl font-bold mb-3">Ready to Transform KUPPET Meru?</h4>
-              <p className="mb-4 flex items-center justify-center text-xl font-bold">
-                <Vote className="h-10 w-10 mr-3 text-primary-foreground" />
-                Vote Kinoti Mungania for Treasurer – KUPPET Elections 2026
-              </p>
-              <p className="text-sm text-primary-foreground font-medium">
-                "Together, we will build a KUPPET that truly serves its members with dignity, transparency, and excellence."
+              <div>
+                <h4 className="font-semibold text-gray-900">Community Service</h4>
+                <p>
+                  A committed KUPPET member since 2007, I’ve been a strong advocate for teachers' rights. I’ve served in key leadership roles in Meru County, including Science Congress Secretary for the larger Tigania District and Sports Secretary for Tigania East. Currently, I’m the Treasurer for the Meru Spotlight Group and several other teachers' groups.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900">Local Knowledge</h4>
+                <p>
+                  Born and raised in Meru County, and having worked here for many years, I have a deep, firsthand understanding of the unique challenges teachers face in the region.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900">My Vision</h4>
+                <p className="italic">
+                  "To transform KUPPET Meru Branch into a model of excellence where every teacher feels supported, valued, and empowered. Through transparent financial management and comprehensive welfare programs, we will build a stronger future for our educational community."
+                </p>
+              </div>
+              <ul className="list-disc pl-5 text-gray-700 mt-4 space-y-2">
+                <li>Passionate about teacher welfare</li>
+                <li>Proven financial management skills</li>
+                <li>Committed to transparency</li>
+              </ul>
+              <p className="mt-4 italic text-center text-lg font-medium text-primary">
+                "Together, we will ensure that no teacher faces challenges alone, and every educator in Meru County thrives with dignity and support."
+                <br />– Kinoti Mungania
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };

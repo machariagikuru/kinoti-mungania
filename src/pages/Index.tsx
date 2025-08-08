@@ -1,10 +1,11 @@
 
 import { Hero } from "@/components/Hero";
+import { TeamKinotiImageSection } from "@/components/TeamKinotiImageSection";
+import { TeamKinotiTextSection } from "@/components/TeamKinotiTextSection";
 import { Manifesto } from "@/components/Manifesto";
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Navigation } from "@/components/Navigation";
-import { SplitSliderSection } from "@/components/SplitSliderSection";
 import { FloatingStarsCounter } from "@/components/FloatingStarsCounter";
 
 
@@ -12,7 +13,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-secondary to-accent/20">
       <Navigation />
-      <SplitSliderSection />
+      <TeamKinotiImageSection />
+      <TeamKinotiTextSection />
       <Hero />
       <About />
       <Manifesto />
