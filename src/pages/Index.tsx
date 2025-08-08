@@ -7,6 +7,7 @@ import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Navigation } from "@/components/Navigation";
 import { FloatingStarsCounter } from "@/components/FloatingStarsCounter";
+import { Footer } from "@/components/footer";;
 
 
 const Index = () => {
@@ -20,6 +21,9 @@ const Index = () => {
       <About />
       <Contact />
       <FloatingStarsCounter />
+      <Footer />
+
+      {/* Additional sections can be added here */}
     </div>
   );
 };
