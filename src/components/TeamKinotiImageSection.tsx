@@ -35,22 +35,14 @@ export const TeamKinotiImageSection = () => {
         return () => clearInterval(timer);
     }, [current, length]);
 
-    // Share handlers
+    // Always download file
     const handleShare = (url: string, filename: string) => {
-        if (navigator.share) {
-            navigator.share({
-                title: filename,
-                url,
-            });
-        } else {
-            // fallback: download
-            const link = document.createElement("a");
-            link.href = url;
-            link.download = filename;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     };
 
     return (
@@ -103,8 +95,9 @@ export const TeamKinotiImageSection = () => {
                         {slides.map((slide, index) => (
                             <div
                                 key={slide.id}
-                                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === current ? "opacity-100 z-10" : "opacity-0 z-0"
-                                    }`}
+                                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                                    index === current ? "opacity-100 z-10" : "opacity-0 z-0"
+                                }`}
                                 aria-hidden={index !== current}
                             >
                                 <img
@@ -139,8 +132,9 @@ export const TeamKinotiImageSection = () => {
                                 <button
                                     key={index}
                                     onClick={() => setCurrent(index)}
-                                    className={`w-3 h-3 rounded-full transition-all duration-300 ${index === current ? "bg-primary w-5" : "bg-primary/50"
-                                        }`}
+                                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                                        index === current ? "bg-primary w-5" : "bg-primary/50"
+                                    }`}
                                     aria-label={`Go to slide ${index + 1}`}
                                 />
                             ))}
