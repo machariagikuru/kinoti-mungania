@@ -24,6 +24,11 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
       "@typescript-eslint/no-unused-vars": "off",
+
+      "import/no-unresolved": "error",
+      "import/no-named-as-default": "warn",
+      "import/no-named-as-default-member": "warn",
+      "import/no-case-sensitive": "error" // <- Prevents casing issues
     },
   }
 );
